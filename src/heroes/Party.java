@@ -4,6 +4,11 @@ import game.Team;
 
 import java.util.List;
 
+/**
+ * The party of heroes.
+ *
+ * @author Sean Strout @ RIT CS
+ */
 public interface Party {
     /**
      * Add a hero to the back of the collection.
