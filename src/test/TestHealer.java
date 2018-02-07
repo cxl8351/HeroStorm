@@ -32,7 +32,7 @@ public class TestHealer {
         dragonHealer = new TestParty(Team.DRAGON).getHeroes().get(1);
         lionHealer = new TestParty(Team.LION).getHeroes().get(1);
     }
-    
+
     @Before
     public void setUpStreams() {
         System.setOut(new PrintStream(outContent));
@@ -69,11 +69,11 @@ public class TestHealer {
     public void test2Attack() {
         dragonHealer.attack(lionHealer);
         assertEquals("Dragon Healer attacks Lion Healer",
-                "Spyro heals 10 points\n" +
-                "Trogdor heals 10 points\n" +
-                "Spyro heals 10 points\n" +
-                "Smaug heals 10 points\n" +
-                "Elsa takes 10 damage\n",
+                "Spyro heals 10 points" + System.getProperty("line.separator") +
+                        "Trogdor heals 10 points" + System.getProperty("line.separator") +
+                        "Spyro heals 10 points" + System.getProperty("line.separator") +
+                        "Smaug heals 10 points" + System.getProperty("line.separator") +
+                        "Elsa takes 10 damage" + System.getProperty("line.separator"),
                 outContent.toString());
         assertEquals("Lion Healer takeDamage",
                 "Elsa, HEALER, 25/35",
@@ -84,7 +84,7 @@ public class TestHealer {
     public void test3Heal() {
         lionHealer.heal(10);
         assertEquals("Lion Healer heal message",
-                "Elsa heals 10 points\n",
+                "Elsa heals 10 points" + System.getProperty("line.separator"),
                 outContent.toString());
         assertEquals("Lion Healer toString",
                 "Elsa, HEALER, 35/35",
@@ -95,7 +95,7 @@ public class TestHealer {
     public void test4Overheal() {
         lionHealer.heal(20);
         assertEquals("Lion Healer heal message",
-                "Elsa heals 20 points\n",
+                "Elsa heals 20 points" + System.getProperty("line.separator"),
                 outContent.toString());
         assertEquals("Lion Healer toString",
                 "Elsa, HEALER, 35/35",
@@ -106,7 +106,7 @@ public class TestHealer {
     public void test5Fall() {
         lionHealer.takeDamage(50);
         assertEquals("Lion Healer falls to damage",
-                "Elsa takes 50 damage\n",
+                "Elsa takes 50 damage" + System.getProperty("line.separator"),
                 outContent.toString());
         assertEquals("Lion Healer toString",
                 "Elsa, HEALER, 0/35",

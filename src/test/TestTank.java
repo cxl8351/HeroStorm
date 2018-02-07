@@ -32,7 +32,7 @@ public class TestTank {
         dragonTank = new TestParty(Team.DRAGON).getHeroes().get(2);
         lionTank = new TestParty(Team.LION).getHeroes().get(2);
     }
-    
+
     @Before
     public void setUpStreams() {
         System.setOut(new PrintStream(outContent));
@@ -69,7 +69,7 @@ public class TestTank {
     public void test2Attack() {
         dragonTank.attack(lionTank);
         assertEquals("Dragon Tank attacks Lion Tank",
-                "Aslan takes 13 damage\n",
+                "Aslan takes 13 damage" + System.getProperty("line.separator"),
                 outContent.toString());
         assertEquals("Lion Tank takeDamage",
                 "Aslan, TANK, 27/40",
@@ -80,7 +80,7 @@ public class TestTank {
     public void test3Heal() {
         lionTank.heal(10);
         assertEquals("Lion Tank heal message",
-                "Aslan heals 10 points\n",
+                "Aslan heals 10 points" + System.getProperty("line.separator"),
                 outContent.toString());
         assertEquals("Lion Tank toString",
                 "Aslan, TANK, 37/40",
@@ -91,7 +91,7 @@ public class TestTank {
     public void test4Overheal() {
         lionTank.heal(20);
         assertEquals("Lion Tank heal message",
-                "Aslan heals 20 points\n",
+                "Aslan heals 20 points" + System.getProperty("line.separator"),
                 outContent.toString());
         assertEquals("Lion Tank toString",
                 "Aslan, TANK, 40/40",
@@ -102,7 +102,7 @@ public class TestTank {
     public void test5Fall() {
         lionTank.takeDamage(50);
         assertEquals("Lion Tank falls to damage",
-                "Aslan takes 45 damage\n",
+                "Aslan takes 45 damage" + System.getProperty("line.separator"),
                 outContent.toString());
         assertEquals("Lion Tank toString",
                 "Aslan, TANK, 0/40",
