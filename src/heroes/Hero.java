@@ -9,31 +9,31 @@ public class Hero {
         this.HP = HP;
     }
 
-    public static Hero create(heroes.Heroes.Role Role,game.Team Team,Party Party){
+    public Hero create(heroes.Heroes.Role Role,game.Team Team,Party Party){
         return null;
     }
 
-    public static heroes.Heroes.Role getRole(){
+    public heroes.Heroes.Role getRole(){
         return null;
     }
 
-    public static void attack(Hero enemy){
+    public void attack(Hero enemy){
 
     }
 
-    public static String getName(){
+    public String getName(){
         return "";
     }
 
-    public static void heal(int amount){
+    public void heal(int amount){
 
     }
 
-    public static void takeDamage(int amount){
+    public void takeDamage(int amount){
 
     }
 
-    public static boolean hasFallen(){
+    public boolean hasFallen(){
         return false;
     }
 
