@@ -28,7 +28,7 @@ public class HeroStorm {
         int round = 0;
         boolean DragonFirst = true;
 
-        while(DragonParty.numHeroes() > 0 || LionParty.numHeroes() > 0){
+        while(DragonParty.numHeroes() > 0 && LionParty.numHeroes() > 0){
             ++round;
             //Round ... !
             System.out.println("=====================================");
