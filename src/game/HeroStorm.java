@@ -111,7 +111,7 @@ public class HeroStorm {
     /**
      * Main function, calls play()
      *
-     * @param args
+     * @param args Used as seeds to randomize the party orders.
      */
     public static void main(String[] args){
 
